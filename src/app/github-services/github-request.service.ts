@@ -16,8 +16,8 @@ export class GithubRequestService {
   refinedRepos=Repos;
 
   constructor(private http:HttpClient) {
-    this.user = new User ("","");
-    this.repo = new Repo ("","","")
+    this.user = new User ("","","","","","",0,0,0);
+    this.repo = new Repo ("","","");
     this.repositories = [];
     this.refinedRepos = [];
   }
@@ -25,7 +25,14 @@ export class GithubRequestService {
 
     interface ApiResponse{
         name:string;
+        login:string;
+        email:string;
         avatar_url:string;
+        html_url:string;
+        company:string;
+        public_repos:number;
+        followers:number;
+        following:number;
 
     }
     let promise =new Promise((resolve,reject)=>{
@@ -33,6 +40,13 @@ export class GithubRequestService {
             
             this.user.name=response.name
             this.user.avatarUrl=response.avatar_url
+            this.user.login=response.login
+            this.user.email=response.email
+            this.user.html_url=response.html_url
+            this.user.public_repos=response.public_repos
+            this.user.company=response.company
+            this.user.followers=response.followers
+            this.user.following=response.following
 
             resolve()
         },
