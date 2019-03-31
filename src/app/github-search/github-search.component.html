@@ -1,13 +1,25 @@
 <div class="container">
   <div class="row" id="search">
       <div class="col-md-8" >
-          <input type="text" class="form-control" placeholder="search user" style="margin-top:1%; font-size:20px;">
+          <input type="text" class="form-control" placeholder="search user" style="margin-top:1%;font-size:15px;">
         </div>
         <div class="col-md-2">
             <button type="submit" class="btn btn-outline-success my-2 my-sm-0 btn-rounded">Search</button>
         </div>
-        {{user.name}}
   </div>
+  <h4>Results</h4>
+  <div class="row" id ="results" *ngFor='let user of users; let i=index'>
+    <div class="col-md-2">
+        <img src="{{user.avatarUrl}}" style="height:150px;width:150px;">
+        <p style="font-size: 20px; margin-top:5%;">{{user.name}}</p>
+    </div>
+    <div class="col-md-8">
+    </div>
+  </div>
+  <div class="col-md-8" *ngFor='let repository of repositories; let i=index'>
+      <p>{{repository.name}}</p>
+      <p>{{repository.html_Url}}</p>
+    </div>
 </div>
-
+        
 

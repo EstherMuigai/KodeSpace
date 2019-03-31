@@ -1,0 +1,16 @@
+.container {
+    color:greenyellow;
+}
+
+#search{
+    margin-top:10%;
+    margin-left: 10%;
+}
+
+#results {
+    margin-top: 2%;
+}
+
+h4 {
+    margin-top: 2%;
+}

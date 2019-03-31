@@ -1,0 +1,40 @@
+.wrapper-view{
+    font-family: 'Indie Flower', cursive;
+}
+
+#mynav {
+font-size: 20px;
+color: white;
+padding-left: 20%;
+}
+
+
+a {
+    margin: 1%;
+    width: 200px;
+    height: 66px;
+}
+
+#profpic {
+    height: 50px;
+    width: 50px;
+}
+
+.component {
+    background-color: black;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
+
+#comp1 {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(2, 2, 2, 0.5);
+    z-index: 3;
+}
