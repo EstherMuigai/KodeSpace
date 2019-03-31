@@ -16,8 +16,9 @@ export class GithubSearchComponent implements OnInit {
   repo:Repo;
   users = [];
   repositories = [];
+  
   constructor(private githubService:GithubRequestService) {
-    this.username="EstherMuigai";
+    this.username="LizKimita";
   }
 
   ngOnInit() {

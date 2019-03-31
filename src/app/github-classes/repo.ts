@@ -1,3 +1,3 @@
 export class Repo {
-    constructor(public avatarUrl:string,public name:string,public repoUrl:string){}
+    constructor(public name:string,public description:string,public repoUrl:string){}
 }

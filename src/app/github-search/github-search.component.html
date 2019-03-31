@@ -13,13 +13,10 @@
         <img src="{{user.avatarUrl}}" style="height:150px;width:150px;">
         <p style="font-size: 20px; margin-top:5%;">{{user.name}}</p>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8" *ngFor='let repository of repositories; let i=index'>
+        <p>{{repository.name}} {{repository.description}} {{repository.repoUrl}}</p>
     </div>
   </div>
-  <div class="col-md-8" *ngFor='let repository of repositories; let i=index'>
-      <p>{{repository.name}}</p>
-      <p>{{repository.html_Url}}</p>
-    </div>
 </div>
         
 

@@ -4,7 +4,7 @@ import { User } from '../github-classes/user';
 import { Repo } from '../github-classes/repo';
 import { Repos } from '../github-classes/repos';
 import { HttpClient } from '@angular/common/http';
-import { stringify } from '@angular/core/src/util';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -13,11 +13,13 @@ export class GithubRequestService {
   user:User;
   repo:Repo;
   repositories=Repos;
+  refinedRepos=Repos;
 
   constructor(private http:HttpClient) {
     this.user = new User ("","");
     this.repo = new Repo ("","","")
     this.repositories = [];
+    this.refinedRepos = [];
   }
   userProfileRequest(currSearch){
 
@@ -46,15 +48,12 @@ export class GithubRequestService {
   repoRequest(currSearch){
     
     interface ApiResponse{
-      repos:any[]
-      
+      length:number;
   }
-      this.http.get<ApiResponse>(environment.apiUrl+environment.user+currSearch+environment.repositories+environment.accesstoken).toPromise().then(response=>{
-          console.log(response);
-          this.repositories = response.repos;
-          for(let r of response.repos){
-            console.log(r);
-          }
+      this.http.get(environment.apiUrl+environment.user+currSearch+environment.repositories+environment.accesstoken).toPromise().then(response=>{
+        for(let i = 0; i<response.length; i++){
+          this.repositories.push(new Repo(response[i].name,response[i].description,response[i].html_url))
+        }
 })
 }
 
