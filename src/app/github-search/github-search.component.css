@@ -1,9 +1,5 @@
-.container {
-    color:white;
-}
-
 #search{
-    margin-top:10%;
+    margin-top:15%;
     margin-left: 5%;
 }
 
@@ -13,12 +9,13 @@ a {
 }
 
 #results {
-    margin: 3%;
+    margin-top: 3%;
+    margin-left: 5%;
     height: 100%;
     font-size: 15px;
     color:#2f3847;
     padding: 0;
-    width:800px;
+    max-width:750px;
 }
 
 h4 {
@@ -27,18 +24,21 @@ h4 {
 
 .profilestyle {
     height:200px;
-    width:300px;
+    width:50%;
     margin:0;
 }
 
 #profiledetails {
-    padding-top:5%;
+    padding:5%;
+    width: 50%;
     background-color: #80c926;
 }
 
 #profilestats {
     background-color: white;
-    width:600px;
+    max-width:750px;
+    margin: 0;
+    padding-top:1%;
 }
 
 .thenumbers {
@@ -49,4 +49,10 @@ h4 {
     background-color: #f77f2e;
     padding:0;
     margin: 0;
+    width:50px;
+}
+
+.contactinfo {
+    height:25%;
+    margin:1%;
 }

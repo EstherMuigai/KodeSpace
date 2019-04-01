@@ -13,13 +13,11 @@ export class GithubRequestService {
   user:User;
   repo:Repo;
   repositories=Repos;
-  refinedRepos=Repos;
 
   constructor(private http:HttpClient) {
     this.user = new User ("","","","","","",0,0,0);
     this.repo = new Repo ("","","");
     this.repositories = [];
-    this.refinedRepos = [];
   }
   userProfileRequest(currSearch){
 
@@ -61,13 +59,12 @@ export class GithubRequestService {
 
   repoRequest(currSearch){
     
-    interface ApiResponse{
-      length:number;
-  }
-      this.http.get(environment.apiUrl+environment.user+currSearch+environment.repositories+environment.accesstoken).toPromise().then(response=>{
-        for(let i = 0; i<response.length; i++){
-          this.repositories.push(new Repo(response[i].name,response[i].description,response[i].html_url))
-        }
+    this.http.get(environment.apiUrl+environment.user+currSearch+environment.repositories+environment.accesstoken).subscribe(response=>{
+      for(let i = 0; i<response.length; i++){
+        this.repositories.push(new Repo(response[i].name,response[i].description,response[i].html_url))
+      }
+      console.log(response)
+      console.log(this.repositories)
 })
 }
 }

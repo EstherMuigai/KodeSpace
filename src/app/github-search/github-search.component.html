@@ -1,6 +1,6 @@
 <div class="wrapper">
-  <div class="container-fluid">
-      <div class="col-md-9">
+  <div class="wrapper">
+      <div class="col-md-9" style="max-width:900px;margin: 0;">
           <form class="row" id="search" (ngSubmit)='submitSearch()' #searchForm='ngForm'>
               <div class="col-md-8">
                   <input type="text" class="form-control" placeholder="search user" style="margin-top:2%;font-size:20px;" id="username" [(ngModel)]="username" name="username">
@@ -11,15 +11,15 @@
           </form>
         <h5 style="color:white;margin-left:10%;margin-top:3%;">Search Found</h5>
         <div class="row" id ="results" *ngFor='let user of users; let i=index'>
-          <div class="col-md-9">
-            <div class="row" style="margin: 0;">
+          <div class="col-md-10" style="margin:0;padding:0;">
+            <div class="row" style="margin: 0;padding: 0;">
               <div class="col-md-6" class="profilestyle" id="profiledetails">  
                   <h2>{{user.name}}</h2>
                   <p>@{{user.login}}</p>
                   <p>{{user.company}}</p>
               </div>
               <div class="col-md-6" class="profilestyle" style="margin: 0;padding: 0;">
-                  <img src="{{user.avatarUrl}}" style="height:200px;width:300px;margin:0;">
+                  <img src="{{user.avatarUrl}}" style="height:200px;width:100%;margin:0;">
               </div>
             </div>
             <div class="row"  id="profilestats">
@@ -37,16 +37,36 @@
                 </div>
           </div>
           </div>
-          <div class="col-md-3" id="contacts">
-            <i class="far fa-envelope"></i>
+          <div class="col-md-2" id="contacts" class="btn">
+            <div class="contactinfo">
+              <i class="fab fa-github" style="font-size:30px;"><a href="{{user.html_Url}}"></a></i>
+            </div>
+            <div class="contactinfo">
+              <i class="far fa-envelope" style="font-size:30px;"><a href="{{user.email}}"></a></i>
+            </div>
+            <div class="contactinfo">
+              <i class="fas fa-tasks" style="font-size:30px;"><a href="{{repository.repoUrl}}"></a></i>
+            </div>
+            <div class="contactinfo">
+              <i class="far fa-bell" style="font-size:30px;"></i>
+            </div>
           </div>
         </div>
         <div class="row">
           
         </div>
-      <div class="col-md-3">
-        
-        </div>
+      <div class="col-md-3" style="margin:0;max-width:300px;">
+          <div class="row" *ngFor='let repository of repositories; let i=index'>
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{repository.name}}</h5>
+                <p class="card-text">{{repository.description}}</p>
+                <a href="{{repository.repoUrl}}" class="btn btn-primary">View on github</a>
+              </div>
+            </div>
+      </div>
+  </div>
+      </div>
     </div>
 </div>
 
