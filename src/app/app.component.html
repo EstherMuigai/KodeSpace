@@ -1,6 +1,6 @@
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
 <div class="wrapper-view">
-    <nav class="navbar fixed-top navbar-expand-lg" id="mynav">
+    <nav class="navbar navbar-expand-lg" id="mynav">
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
@@ -13,15 +13,22 @@
               <a  class="nav-link">About Us</a>
             </li>
           </ul>
-            <img src="assets/images/CAMP.png" style="height:150px;width:200px;position:fixed;margin-left:80%;margin-top:1%;padding:0;">
+            <img src="assets/images/CAMP.png" style="height:60px;width:100px;margin-left:20%;margin-top:1%;padding:0;">
         </div>
       </nav>
-      <div id="comp1">
-          <app-login></app-login>
-      </div>
-      <div id="comp2">
-          <app-github-search></app-github-search>
-      </div>
+    <div class="wrapper-view">
+          <div id="comp2" style="padding:0;margin-bottom:10%;">
+              <app-github-search></app-github-search>
+          </div>
+          <div class="component" id="comp3">
+              <app-profile></app-profile>
+            </div>
+          <div class="component">
+            <app-about></app-about>
+          </div>
+          <div class="component" style="color: honeydew; height:768px;">
+              <app-not-found></app-not-found>
+          </div>
+    </div>
 </div>
-
 <router-outlet></router-outlet>

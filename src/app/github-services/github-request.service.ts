@@ -50,6 +50,7 @@ export class GithubRequestService {
         },
         error=>{
                 this.user.name="User Not Found."
+                this.user.avatarUrl="assets/images/default.jpg"
                 reject(error)
             }
         )
@@ -58,13 +59,12 @@ export class GithubRequestService {
   }
 
   repoRequest(currSearch){
-    
+    this.repositories = [];
     this.http.get(environment.apiUrl+environment.user+currSearch+environment.repositories+environment.accesstoken).subscribe(response=>{
       for(let i = 0; i<response.length; i++){
         this.repositories.push(new Repo(response[i].name,response[i].description,response[i].html_url))
       }
-      console.log(response)
-      console.log(this.repositories)
+      return this.repositories
 })
 }
 }

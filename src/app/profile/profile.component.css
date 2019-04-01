@@ -1,0 +1,55 @@
+a {
+    color: white;
+    text-decoration: underline;
+}
+
+#results {
+    margin-top: 3%;
+    margin-left: 20%;
+    height: 100%;
+    font-size: 15px;
+    color:#2f3847;
+    padding: 0;
+    max-width:750px;
+}
+
+h4 {
+    margin-top: 2%;
+}
+
+.profilestyle {
+    height:200px;
+    width:50%;
+    margin:0;
+}
+
+#profiledetails {
+    padding:5%;
+    width: 50%;
+    background-color: #80c926;
+}
+
+#profilestats {
+    background-color: white;
+    max-width:750px;
+    margin: 0;
+    padding-top:1%;
+}
+
+.thenumbers {
+    font-size: 30px;
+}
+
+#contacts {
+    background-color: #f77f2e;
+    height:290px;
+    padding:0;
+    margin: 0;
+    width:5px;
+}
+
+.contactinfo {
+    height:25%;
+    margin:1%;
+    text-align: center;
+}

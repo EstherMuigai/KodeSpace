@@ -1,9 +1,9 @@
-<div class="wrapper">
-  <div class="wrapper">
-      <div class="col-md-9" style="max-width:900px;margin: 0;">
+<div class="container-fluid" style="margin-top:0%;padding:0;">
+  <div class="wrapper" style="margin-top:0%;padding:0;">
+      <div class="col-md-9" style="max-width:900px;margin-left:15%;margin-top:0%;padding:0;">
           <form class="row" id="search" (ngSubmit)='submitSearch()' #searchForm='ngForm'>
-              <div class="col-md-8">
-                  <input type="text" class="form-control" placeholder="search user" style="margin-top:2%;font-size:20px;" id="username" [(ngModel)]="username" name="username">
+              <div class="col-md-8" style="margin-top:1%;padding:0;">
+                  <input type="text" class="form-control" placeholder="search user" style="font-size:20px;" id="username" [(ngModel)]="username" name="username">
                 </div>
                 <div class="col-md-2">
                     <button type="submit" class="btn btn-outline-success btn-rounded">Search</button>
@@ -45,29 +45,32 @@
               <a href={{user.email}} class="far fa-envelope" style="font-size:30px;color: #2f3847;"></a>
             </div>
             <div class="contactinfo">
-                <a href={{repository.repoUrl}} class="fas fa-tasks" style="font-size:30px;color: #2f3847;"></a>
+                <a href="/"class="fas fa-tasks" style="font-size:30px;color: #2f3847;"></a>
             </div>
             <div class="contactinfo">
               <i class="far fa-bell" style="font-size:30px;color: #2f3847;"></i>
             </div>
           </div>
-        </div>
-        <div class="row">
-          
-        </div>
-      <div class="col-md-3" style="margin:0;max-width:300px;">
-          <div class="row" *ngFor='let repository of repositories; let i=index'>
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">{{repository.name}}</h5>
-                <p class="card-text">{{repository.description}}</p>
-                <a href="{{repository.repoUrl}}" class="btn btn-primary">View on github</a>
-              </div>
-            </div>
+      </div>
+      <div class="wrapper" style="margin-top:3%;">
+          <div class="row">
+              <div class="card" style="width: 18rem;margin:1%;" *ngFor='let repository of repositories; let i=index;'>
+                  <div *ngIf='i%2===0' class="card-body" style="background-color: #f77f2e;">
+                    <h5 class="card-header" style="background-color:grey;">{{repository.name}}</h5>
+                    <p class="card-text" style="color:white">{{repository.description}}</p>
+                    <i class="fab fa-github-square" style="font-size:24px;"></i>
+                    <a href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
+                  </div>
+                  <div *ngIf='i%2!==0' class="card-body" style="background-color: grey;">
+                      <h5 class="card-header" style="background-color:#f77f2e;">{{repository.name}}</h5>
+                      <p class="card-text" style="color:white">{{repository.description}}</p>
+                      <i class="fab fa-github-square" style="font-size:24px;"></i>
+                      <a href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
+                    </div>
+                </div>
+          </div>
       </div>
   </div>
-      </div>
-    </div>
 </div>
 
 

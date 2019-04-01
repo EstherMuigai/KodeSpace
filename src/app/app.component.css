@@ -1,13 +1,15 @@
 .wrapper-view{
     font-family: 'Josefin Sans', sans-serif;
+    background-color:#2f3847;
 }
 
 #mynav {
 font-size: 20px;
 color: white;
 padding-left: 5%;
+height:70px;
 margin: 0;
-background:transparent;
+background-color:#2f3847;
 }
 
 
@@ -23,29 +25,28 @@ a {
 }
 
 .component {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 1366px;
     left: 0;
     top: 0;
 }
 
 #comp2 {
-    background-color:#2f3847;
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 1366px;
+    left: 0;
+    top: 0;
+  }
+
+  #comp3 {
+    width: 1366px;
     left: 0;
     top: 0;
   }
 
 #comp1 {
-    position: fixed;
-    width: 100%;
-    height: 100%;
+    width: 1366px;
+    height: 768px;
     left: 0;
     top: 0;
-    background: rgba(2, 2, 2, 0.5);
-    background-image: url("src/assets/images/bg1.jpg");
-    z-index: 10;
+    margin:0;
+    padding: 0;
 }

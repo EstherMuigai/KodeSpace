@@ -3,23 +3,22 @@ import { User } from '../github-classes/user';
 import { GithubRequestService } from '../github-services/github-request.service';
 import { Repo } from '../github-classes/repo';
 
-
 @Component({
-  selector: 'app-github-search',
-  templateUrl: './github-search.component.html',
+  selector: 'app-profile',
+  templateUrl: './profile.component.html',
   providers: [GithubRequestService],
-  styleUrls: ['./github-search.component.css']
+  styleUrls: ['./profile.component.css']
 })
-export class GithubSearchComponent implements OnInit {
+export class ProfileComponent implements OnInit {
   private username:string;
   user:User;
   repo:Repo;
   users = [];
   repositories = [];
-  usernameSearch="";
+  usernameSearch="EstherMuigai";
+  constructor(private githubService:GithubRequestService) { }
 
-  submitSearch(){
-    this.usernameSearch=this.username;
+  ngOnInit() {
     this.githubService.userProfileRequest(this.usernameSearch)
     this.user=this.githubService.user;
     this.users=[];
@@ -27,10 +26,6 @@ export class GithubSearchComponent implements OnInit {
     this.githubService.repoRequest(this.usernameSearch);
     this.repositories = [];
     this.repositories = this.githubService.repositories;
-    console.log(this.repositories);
   }
-  
-  constructor(private githubService:GithubRequestService) {}
 
-  ngOnInit() {}
 }
