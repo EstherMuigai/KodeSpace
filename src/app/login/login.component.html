@@ -1,0 +1,10 @@
+<div id="login">
+    <form class="row" #userForm='ngForm' (ngSubmit)='loginApp()'>
+        <div class="col-md-5" >
+            <input type="text" class="form-control" placeholder="Username" id="profileUser" [(ngModel)]="newpUser.profileUser" name="profileUser">
+          </div>
+          <div class="col-md-3">
+              <button type="submit" (click) = 'loginUser' class="btn btn-dark btn-rounded btn-block">Submit</button>
+          </div>
+        </form>
+  </div>

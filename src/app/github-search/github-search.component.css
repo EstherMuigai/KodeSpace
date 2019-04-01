@@ -49,10 +49,11 @@ h4 {
     background-color: #f77f2e;
     padding:0;
     margin: 0;
-    width:50px;
+    width:5px;
 }
 
 .contactinfo {
     height:25%;
     margin:1%;
+    text-align: center;
 }

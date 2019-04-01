@@ -6,11 +6,13 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { GithubSearchComponent } from './github-search/github-search.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GithubSearchComponent
+    GithubSearchComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
