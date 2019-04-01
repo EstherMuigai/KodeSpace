@@ -27,7 +27,6 @@ export class GithubSearchComponent implements OnInit {
     this.githubService.repoRequest(this.usernameSearch);
     this.repositories = [];
     this.repositories = this.githubService.repositories;
-    console.log(this.repositories);
   }
   
   constructor(private githubService:GithubRequestService) {}

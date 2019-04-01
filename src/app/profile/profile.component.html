@@ -1,9 +1,8 @@
-<h5 style="color:white;margin-left:10%;">My Profile</h5>
 <div class="row" id ="results" *ngFor='let user of users; let i=index'>
-  <div class="col-md-10" style="margin:0;padding:0;">
+  <div class="col-md-7" style="margin:0;padding:0;">
     <div class="row" style="margin: 0;padding: 0;">
       <div class="col-md-6" class="profilestyle" id="profiledetails">  
-          <h2>{{user.name}}</h2>
+          <h2 style="margin-top: 10%;">{{user.name}}</h2>
           <p>@{{user.login}}</p>
           <p>{{user.company}}</p>
       </div>
@@ -26,7 +25,7 @@
         </div>
   </div>
   </div>
-  <div class="col-md-2" id="contacts">
+  <div class="col-md-1" id="contacts">
     <div class="contactinfo">
       <a href={{user.html_url}} class="fab fa-github" style="font-size:30px;color: #2f3847;"></a>
     </div>
@@ -40,22 +39,19 @@
       <i class="far fa-bell" style="font-size:30px;color: #2f3847;"></i>
     </div>
   </div>
-</div>
-<div class="container-fluid" style="margin-top: 0;">
-  <div class="row" style="margin-top: 0;">
-      <div class="card" style="width: 18rem;margin:1%;" *ngFor='let repository of repositories; let i=index;'>
-          <div *ngIf='i%2===0' class="card-body" style="background-color: #f77f2e;">
-            <h5 class="card-header" style="background-color:grey;">{{repository.name}}</h5>
-            <p class="card-text" style="color:white">{{repository.description}}</p>
-            <i class="fab fa-github-square" style="font-size:24px;"></i>
-            <a href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
-          </div>
-          <div *ngIf='i%2!==0' class="card-body" style="background-color: grey;">
-              <h5 class="card-header" style="background-color:#f77f2e;">{{repository.name}}</h5>
-              <p class="card-text" style="color:white">{{repository.description}}</p>
-              <i class="fab fa-github-square" style="font-size:24px;"></i>
-              <a href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
-            </div>
-        </div>
-  </div>
+  <div class="col-md-4" id="repoList">
+    <div style="margin-top:0;" id="repos">
+    <div class="list-group" >
+      <li class="list-group-item" style="background-color:#0b1c38;font-size:20px;color:white;">My repositories</li>
+      <div *ngFor='let repository of repositories; let i=index;'> 
+      <a href="{{repository.repoUrl}}" *ngIf='i%2!==0' style="background-color: grey;" class="list-group-item list-group-item-action">
+        {{repository.name}}
+      </a>
+      <a href="{{repository.repoUrl}}"  *ngIf='i%2===0' style="background-color: #f77f2e;" class="list-group-item list-group-item-action">
+        {{repository.name}}
+      </a>
+      </div>
+    </div>
+    </div>
+    </div>
 </div>

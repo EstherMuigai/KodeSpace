@@ -1,5 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-<div class="wrapper-view">
+<div class="wrapper-view" style="overflow-x:hidden;">
     <nav class="navbar navbar-expand-lg" id="mynav">
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
@@ -13,16 +13,16 @@
               <a  class="nav-link">About Us</a>
             </li>
           </ul>
-            <img src="assets/images/CAMP.png" style="height:60px;width:100px;margin-left:20%;margin-top:1%;padding:0;">
         </div>
       </nav>
+
     <div class="wrapper-view">
-          <div id="comp2" style="padding:0;margin-bottom:10%;">
-              <app-github-search></app-github-search>
-          </div>
           <div class="component" id="comp3">
               <app-profile></app-profile>
             </div>
+            <div id="comp2" style="padding:0;margin-bottom:10%;margin-top:0;">
+              <app-github-search></app-github-search>
+          </div>
           <div class="component">
             <app-about></app-about>
           </div>

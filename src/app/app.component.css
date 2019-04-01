@@ -1,17 +1,17 @@
 .wrapper-view{
     font-family: 'Josefin Sans', sans-serif;
     background-color:#2f3847;
+    color:white;
 }
 
 #mynav {
-font-size: 20px;
-color: white;
-padding-left: 5%;
-height:70px;
-margin: 0;
-background-color:#2f3847;
-}
-
+    font-size: 20px;
+    color: white;
+    padding-left: 5%;
+    height:70px;
+    margin: 0;
+    background-color:#2f3847;
+    }
 
 a {
     margin-right: 1%;

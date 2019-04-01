@@ -1,6 +1,12 @@
 #search{
-    margin-top:15%;
-    margin-left: 5%;
+    margin-top:3%;
+    margin-left: 15%;
+    width:1200px;
+}
+
+a {
+    color: white;
+    text-decoration: underline;
 }
 
 a {
@@ -10,12 +16,26 @@ a {
 
 #results {
     margin-top: 3%;
-    margin-left: 5%;
-    height: 100%;
+    margin-right: 0;
+    margin-left: 15%;
+    max-width:900px;
+    height: 300px;
     font-size: 15px;
     color:#2f3847;
     padding: 0;
-    max-width:750px;
+}
+
+
+#repoList {
+    margin:0;
+    padding:0;
+}
+
+#repos {
+    max-width:400px;
+    max-height: 290px;
+    overflow-y:scroll;
+    -webkit-overflow-scrolling: touch;
 }
 
 h4 {
@@ -31,11 +51,12 @@ h4 {
 #profiledetails {
     padding:5%;
     width: 50%;
-    background-color: #80c926;
+    background-color: #f77f2e;
 }
 
 #profilestats {
-    background-color: white;
+    background-color: #0b1c38;
+    color:#f77f2e;
     max-width:750px;
     margin: 0;
     padding-top:1%;
@@ -47,6 +68,7 @@ h4 {
 
 #contacts {
     background-color: #f77f2e;
+    height:290px;
     padding:0;
     margin: 0;
     width:5px;
