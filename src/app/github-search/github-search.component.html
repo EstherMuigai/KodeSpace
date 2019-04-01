@@ -2,7 +2,7 @@
   <div class="container-fluid">
       <div class="col-md-9">
           <form class="row" id="search" (ngSubmit)='submitSearch()' #searchForm='ngForm'>
-              <div class="col-md-8" >
+              <div class="col-md-8">
                   <input type="text" class="form-control" placeholder="search user" style="margin-top:2%;font-size:20px;" id="username" [(ngModel)]="username" name="username">
                 </div>
                 <div class="col-md-2">
@@ -10,16 +10,16 @@
                 </div>
           </form>
         <h5 style="color:white;margin-left:10%;margin-top:3%;">Search Found</h5>
-        <div class="row" class="container" id ="results" *ngFor='let user of users; let i=index'>
+        <div class="row" id ="results" *ngFor='let user of users; let i=index'>
           <div class="col-md-9">
-            <div class="row">
-              <div class="col-md-6"class="profilestyle" id="profiledetails">  
+            <div class="row" style="margin: 0;">
+              <div class="col-md-6" class="profilestyle" id="profiledetails">  
                   <h2>{{user.name}}</h2>
                   <p>@{{user.login}}</p>
                   <p>{{user.company}}</p>
               </div>
-              <div class="col-md-6" class="profilestyle">
-                  <img src="{{user.avatarUrl}}" style="height:100%;width:100%;margin:0;">
+              <div class="col-md-6" class="profilestyle" style="margin: 0;padding: 0;">
+                  <img src="{{user.avatarUrl}}" style="height:200px;width:300px;margin:0;">
               </div>
             </div>
             <div class="row"  id="profilestats">
@@ -37,25 +37,13 @@
                 </div>
           </div>
           </div>
-          <div class="col-md-2" id="contacts">
-            <div class="row" class="btn">
-              <i class="far fa-envelope"></i>
-            </div>
-            <div class="row">
-              
-            </div>
-            <div class="row">
-                <a href="{{user.html_url}}"><i class="fab fa-github"></i></a>
-            </div>
-            <div class="row">
-              
-            </div>
+          <div class="col-md-3" id="contacts">
+            <i class="far fa-envelope"></i>
           </div>
         </div>
         <div class="row">
           
         </div>
-      </div>
       <div class="col-md-3">
         
         </div>
