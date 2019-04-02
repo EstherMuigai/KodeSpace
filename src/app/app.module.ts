@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
+import { NgProgressModule } from '@ngx-progressbar/core';
+import { NgProgressHttpModule } from '@ngx-progressbar/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -29,7 +31,9 @@ import { TruncateTextDirective } from './truncate-text.directive';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule 
+    RouterModule,
+    NgProgressModule,
+    NgProgressHttpModule
   ],
   providers: [],
   bootstrap: [AppComponent]

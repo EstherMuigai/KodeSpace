@@ -53,8 +53,10 @@
         </div>
         <div class="col-md-4" id="repoList">
           <div style="margin-top:0;" id="repos">
-          <div class="list-group" >
-            <li class="list-group-item" style="background-color:#0b1c38;font-size:20px;color:white;">Repositories</li>
+          <div class="list-group">
+              <li class="list-group-item" style="background-color:#0b1c38;font-size:20px;color:white;">
+                Repositories
+              </li>
             <div *ngFor='let repository of repositories; let i=index;'> 
                 <div class="card" style="width: 18rem;margin:1%;height:15rem;border:solid;" *ngIf='i%2===0' class="card-body" style="background-color: #80c926;">
                     <h5 class="card-header">{{repository.name}}</h5>
@@ -62,7 +64,7 @@
                     <i class="fab fa-github-square" style="font-size:24px;"></i>
                     <a target="_blank" href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
                   </div>
-                  <div class="card" style="width: 18rem;margin:1%;height:15rem;" *ngIf='i%2!==0' class="card-body" style="background-color: grey;">
+                  <div [routerLink]="['/repositories/id']" id="{{i}}" class="card" style="width: 18rem;margin:1%;height:15rem;" *ngIf='i%2!==0' class="card-body" style="background-color: grey;">
                       <h5 class="card-header">{{repository.name}}</h5>
                       <p class="card-text" style="color:white;">{{repository.description}}</p>
                       <i class="fab fa-github-square" style="font-size:24px;"></i>

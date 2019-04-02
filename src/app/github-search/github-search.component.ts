@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Trending } from '../trending';
 import { GithubRequestService } from '../github-services/github-request.service';
 import { Repo } from '../github-classes/repo';
+import { Router} from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { Repo } from '../github-classes/repo';
 })
 export class GithubSearchComponent implements OnInit {
   private username:string;
-  private trending:any;
+  private repoSearch:string;
   user:User;
   repo:Repo;
   trend:Trending;
@@ -33,8 +34,8 @@ export class GithubSearchComponent implements OnInit {
     this.repositories = [];
     this.repositories = this.githubService.repositories;
   }
-  
-  constructor(private githubService:GithubRequestService,private http:HttpClient) {}
+
+  constructor(private githubService:GithubRequestService,private http:HttpClient, private router:Router) {}
 
   ngOnInit() {
     interface ApiResponse{
