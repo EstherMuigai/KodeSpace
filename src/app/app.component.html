@@ -4,18 +4,20 @@
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="nav-link">Home</a>
+              <a routerLink='/home' routerLinkActive='active'>Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">Profile</a>
+              <a routerLink='/profile'>Profile</a>
             </li>
             <li class="nav-item">
-              <a  class="nav-link">About Us</a>
+              <a  routerLink='/about'>About Us</a>
             </li>
           </ul>
         </div>
       </nav>
-
+      <div id="stuck">
+          <router-outlet></router-outlet>
+      </div>
     <div class="wrapper-view">
           <div class="component" id="comp3">
               <app-profile></app-profile>
@@ -31,4 +33,4 @@
           </div>
     </div>
 </div>
-<router-outlet></router-outlet>
+

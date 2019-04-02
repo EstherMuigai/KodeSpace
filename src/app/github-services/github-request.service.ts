@@ -4,7 +4,8 @@ import { User } from '../github-classes/user';
 import { Repo } from '../github-classes/repo';
 import { Repos } from '../github-classes/repos';
 import { HttpClient } from '@angular/common/http';
-import { identifierModuleUrl } from '@angular/compiler';
+import { BigDataRepo } from '../big-data-repo';
+
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +13,13 @@ import { identifierModuleUrl } from '@angular/compiler';
 export class GithubRequestService {
   user:User;
   repo:Repo;
+  bigdata:BigDataRepo;
   repositories=Repos;
 
   constructor(private http:HttpClient) {
     this.user = new User ("","","","","","",0,0,0);
     this.repo = new Repo ("","","");
+    this.bigdata= new BigDataRepo ("");
     this.repositories = [];
   }
   userProfileRequest(currSearch){
@@ -59,10 +62,11 @@ export class GithubRequestService {
   }
 
   repoRequest(currSearch){
-    this.repositories = [];
+    this.repositories = []
     this.http.get(environment.apiUrl+environment.user+currSearch+environment.repositories+environment.accesstoken).toPromise().then(response=>{
-      for(let i = 0; i<response.length; i++){
-        this.repositories.push(new Repo(response[i].name,response[i].description,response[i].html_url))
+      this.bigdata.reposBigDataArray = response;
+      for(let i = 0; i<Object.keys(this.bigdata.reposBigDataArray).length; i++){
+        this.repositories.push(new Repo(this.bigdata.reposBigDataArray[i].name,this.bigdata.reposBigDataArray[i].description,this.bigdata.reposBigDataArray[i].html_url))
       }
       return this.repositories
 })

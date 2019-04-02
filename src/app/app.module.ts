@@ -13,7 +13,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes:Routes=[
-  {path:"home",component:LoginComponent},
+  {path:"home",component:GithubSearchComponent},
+  {path:"profile",component:ProfileComponent},
   {path:"about",component:AboutComponent},
   {path:"",redirectTo:"/home",pathMatch:"full"},
   {path:'**',component:NotFoundComponent}
