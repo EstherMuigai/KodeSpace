@@ -14,8 +14,7 @@ import { Router} from '@angular/router';
   styleUrls: ['./github-search.component.css']
 })
 export class GithubSearchComponent implements OnInit {
-  private username:string;
-  private repoSearch:string;
+  public username:string;
   user:User;
   repo:Repo;
   trend:Trending;
