@@ -1,4 +1,4 @@
-<form class="row" id="search" (ngSubmit)='submitSearch()' #searchForm='ngForm'>
+<form class="row" id="search" (ngSubmit)='submitSearch()' #searchForm='ngForm' style="margin-top:5%;">
     <div class="col-md-8" style="margin-top:1%;padding:0;">
         <input type="text" class="form-control" placeholder="search user" style="font-size:20px;" id="username" [(ngModel)]="username" name="username">
       </div>
@@ -35,7 +35,7 @@
     </div>
     <div class="col-md-1" id="contacts">
       <div class="contactinfo">
-        <a href={{user.html_url}} class="fab fa-github" style="font-size:30px;color: #2f3847;"></a>
+        <a target="_blank" href={{user.html_url}} class="fab fa-github" style="font-size:30px;color: #2f3847;"></a>
       </div>
       <div class="contactinfo">
         <a href={{user.email}} class="far fa-envelope" style="font-size:30px;color: #2f3847;"></a>
