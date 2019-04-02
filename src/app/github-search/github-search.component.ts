@@ -5,6 +5,7 @@ import { Trending } from '../trending';
 import { GithubRequestService } from '../github-services/github-request.service';
 import { Repo } from '../github-classes/repo';
 import { Router} from '@angular/router';
+import {environment} from '../../environments/environment';
 
 
 @Component({
@@ -42,7 +43,7 @@ export class GithubSearchComponent implements OnInit {
       avatar:string;
       url:string;
   }
-    this.http.get<ApiResponse>("https://github-trending-api.now.sh/developers").subscribe(response=>{
+    this.http.get<ApiResponse>(environment.apiUrl2).subscribe(response=>{
       for(let i = 0; i<Object.keys(response).length; i++){
     this.trend = new Trending (response[i].name,response[i].avatar,response[i].url);
     this.trends.push(this.trend);
