@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../github-classes/user';
 import { HttpClient } from '@angular/common/http';
-import {environment} from '../../environments/environment';
+import { Trending } from '../trending';
 import { GithubRequestService } from '../github-services/github-request.service';
 import { Repo } from '../github-classes/repo';
 
@@ -17,7 +17,9 @@ export class GithubSearchComponent implements OnInit {
   private trending:any;
   user:User;
   repo:Repo;
+  trend:Trending;
   users = [];
+  trends = [];
   repositories = [];
   usernameSearch="";
 
@@ -41,7 +43,10 @@ export class GithubSearchComponent implements OnInit {
       url:string;
   }
     this.http.get<ApiResponse>("https://github-trending-api.now.sh/developers").subscribe(response=>{
-      
-    })
+      for(let i = 0; i<Object.keys(response).length; i++){
+    this.trend = new Trending (response[i].name,response[i].avatar,response[i].url);
+    this.trends.push(this.trend);
+      }
+  })
   }
 }
