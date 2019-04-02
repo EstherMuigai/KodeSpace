@@ -11,6 +11,7 @@ import { LoginComponent } from './login/login.component';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
+import { TruncateTextDirective } from './truncate-text.directive';
 
 const routes:Routes=[
   {path:"home",component:GithubSearchComponent},
@@ -27,7 +28,8 @@ const routes:Routes=[
     LoginComponent,
     AboutComponent,
     NotFoundComponent,
-    ProfileComponent
+    ProfileComponent,
+    TruncateTextDirective
   ],
   imports: [
     BrowserModule,
