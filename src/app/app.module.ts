@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {HttpClientModule} from '@angular/common/http';
 import {FormsModule} from '@angular/forms';
-import {RouterModule,Routes} from '@angular/router';
+import {RouterModule} from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,13 +13,6 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { ProfileComponent } from './profile/profile.component';
 import { TruncateTextDirective } from './truncate-text.directive';
 
-const routes:Routes=[
-  {path:"home",component:GithubSearchComponent},
-  {path:"profile",component:ProfileComponent},
-  {path:"about",component:AboutComponent},
-  {path:"",redirectTo:"/home",pathMatch:"full"},
-  {path:'**',component:NotFoundComponent}
-]
 
 @NgModule({
   declarations: [
@@ -36,7 +29,7 @@ const routes:Routes=[
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
