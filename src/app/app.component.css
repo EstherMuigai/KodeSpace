@@ -1,15 +1,16 @@
 .wrapper-view{
     font-family: 'Josefin Sans', sans-serif;
-    background-image:url("https://i.ytimg.com/vi/9rIhVDNLy4Q/maxresdefault.jpg");
     color:white;
     margin: 0;
+    position: fixed;
+    background-color: #f45942;
 }
 
 #mynav {
     width:1366px;
-    font-size: 20px;
+    font-size: 25px;
     background: transparent;
-    position:fixed;
+    padding-top:1%;
     }
 
 a{
@@ -28,32 +29,9 @@ li {
     width: 50px;
 }
 
-.component {
-    left: 0;
-    top: 0;
-}
-
-#comp2 {
-    background-color:#2f3847; 
-    height: 700px;
-    padding: 5%;
-    left: 0;
-    top: 0;
-  }
-
-  #comp3 {
-    height: 600px;
-    padding: 4%;
-    background-color:grey;
-    left: 0;
-    top: 0;
-  }
-
 #stuck{
-    background-color: #784ed3;
     height: 768px;
-    padding-top:7%;
-    margin:0;
+    padding-top:1%;
 }
 
 #comp1 {

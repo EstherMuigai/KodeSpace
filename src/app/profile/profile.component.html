@@ -1,57 +1,64 @@
-<div class="row" id ="results" *ngFor='let user of users; let i=index' style="margin-top:10%;">
-  <div class="col-md-7" style="margin:0;padding:0;">
-    <div class="row" style="margin: 0;padding: 0;">
-      <div class="col-md-6" class="profilestyle" id="profiledetails">  
-          <h2 style="margin-top: 10%;">{{user.name}}</h2>
-          <p>@{{user.login}}</p>
-          <p>{{user.company}}</p>
-      </div>
-      <div class="col-md-6" class="profilestyle" style="margin: 0;padding: 0;">
-          <img src="{{user.avatarUrl}}" style="height:200px;width:100%;margin:0;">
-      </div>
-    </div>
-    <div class="row"  id="profilestats">
-        <div class="col-md-4" style="text-align: center;">
-            <i class="fas fa-users">Followers</i>
-            <p class="thenumbers">{{user.followers}}</p>
+<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+<div class="component" id="comp3">
+  <h1>
+    My profile
+  </h1>
+    <div class="row" id ="results" *ngFor='let user of users; let i=index' style="margin-top:1%;">
+        <div class="col-md-7" style="margin:0;padding:0;">
+          <div class="row" style="margin: 0;padding: 0;">
+            <div class="col-md-6" class="profilestyle" id="profiledetails">  
+                <h2 style="margin-top: 10%;">{{user.name}}</h2>
+                <p>@{{user.login}}</p>
+                <p>{{user.company}}</p>
+            </div>
+            <div class="col-md-6" class="profilestyle" style="margin: 0;padding: 0;">
+                <img src="{{user.avatarUrl}}" style="height:300px;width:100%;margin:0;">
+            </div>
+          </div>
+          <div class="row"  id="profilestats">
+              <div class="col-md-4" style="text-align: center;">
+                  <i class="fas fa-users">Followers</i>
+                  <p class="thenumbers">{{user.followers}}</p>
+              </div>
+              <div class="col-md-4" style="text-align: center;">
+                  <i class="fas fa-users">Following</i>
+                  <p class="thenumbers">{{user.following}}</p>
+              </div>
+              <div class="col-md-4" style="text-align: center;">
+                  <i class="fas fa-tasks">Repositories</i>
+                  <p class="thenumbers">{{user.public_repos}}</p>    
+              </div>
         </div>
-        <div class="col-md-4" style="text-align: center;">
-            <i class="fas fa-users">Following</i>
-            <p class="thenumbers">{{user.following}}</p>
         </div>
-        <div class="col-md-4" style="text-align: center;">
-            <i class="fas fa-tasks">Repositories</i>
-            <p class="thenumbers">{{user.public_repos}}</p>    
+        <div class="col-md-1" id="contacts">
+          <div class="contactinfo">
+            <a target="_blank" href={{user.html_url}} class="fab fa-github" style="font-size:30px;color: #43f441;"></a>
+          </div>
+          <div class="contactinfo">
+            <a target="_blank" href={{user.email}} class="far fa-envelope" style="font-size:30px;color: white"></a>
+          </div>
+          <div class="contactinfo">
+              <a target="_blank" href="/"class="fas fa-tasks" style="font-size:30px;color: yellow;"></a>
+          </div>
+          <div class="contactinfo">
+            <i class="far fa-bell" style="font-size:30px;color: #41f4d6;"></i>
+          </div>
         </div>
-  </div>
-  </div>
-  <div class="col-md-1" id="contacts">
-    <div class="contactinfo">
-      <a href={{user.html_url}} class="fab fa-github" style="font-size:30px;color: #2f3847;"></a>
-    </div>
-    <div class="contactinfo">
-      <a href={{user.email}} class="far fa-envelope" style="font-size:30px;color: #2f3847;"></a>
-    </div>
-    <div class="contactinfo">
-        <a href="/"class="fas fa-tasks" style="font-size:30px;color: #2f3847;"></a>
-    </div>
-    <div class="contactinfo">
-      <i class="far fa-bell" style="font-size:30px;color: #2f3847;"></i>
-    </div>
-  </div>
-  <div class="col-md-4" id="repoList">
-    <div style="margin-top:0;" id="repos">
-    <div class="list-group" >
-      <li class="list-group-item" style="background-color:#0b1c38;font-size:20px;color:white;">My repositories</li>
-      <div *ngFor='let repository of repositories; let i=index;'> 
-      <a href="{{repository.repoUrl}}" *ngIf='i%2!==0' style="background-color: grey;" class="list-group-item list-group-item-action">
-        {{repository.name}}
-      </a>
-      <a href="{{repository.repoUrl}}"  *ngIf='i%2===0' style="background-color: #f77f2e;" class="list-group-item list-group-item-action">
-        {{repository.name}}
-      </a>
+        <div class="col-md-4" id="repoList">
+          <div style="margin-top:0;" id="repos">
+          <div class="list-group">
+            <li class="list-group-item" style="background-color:black;font-size:30px;color:white;">My repositories</li>
+            <div *ngFor='let repository of repositories; let i=index;' id="switchup"> 
+            <a target="_blank" href="{{repository.repoUrl}}" *ngIf='i%2!==0' style="background-color: #f441b2;" class="list-group-item list-group-item-action">
+              {{repository.name}}
+            </a>
+            <a target="_blank" href="{{repository.repoUrl}}"  *ngIf='i%2===0' style="background-color: #80c926;" class="list-group-item list-group-item-action">
+              {{repository.name}}
+            </a>
+            </div>
+          </div>
+          </div>
+          </div>
       </div>
-    </div>
-    </div>
-    </div>
+      
 </div>

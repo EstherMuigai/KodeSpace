@@ -62,7 +62,7 @@ export class GithubRequestService {
   }
 
   repoRequest(currSearch){
-    this.repositories = []
+    this.repositories = [];
     this.http.get(environment.apiUrl+environment.user+currSearch+environment.repositories+environment.accesstoken).toPromise().then(response=>{
       this.bigdata.reposBigDataArray = response;
       for(let i = 0; i<Object.keys(this.bigdata.reposBigDataArray).length; i++){

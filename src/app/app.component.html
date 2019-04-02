@@ -1,5 +1,5 @@
 <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-<div class="wrapper-view" style="overflow-x:hidden;">
+<div class="wrapper-view" style="overflow-x:hidden;margin-bottom:10%;">
     <nav class="navbar navbar-expand-lg" id="mynav">
         <div class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav mr-auto" style="margin-left:5%;">
@@ -13,27 +13,13 @@
               <a  routerLink='/about'>About Us</a>
             </li>
           </ul>
-            <img src="/assets/images/K.png" style="position:fixed;height:65%;margin-left:65%;margin-top:3%;">
+            <img src="/assets/images/K.png" style="position:fixed;height:65%;margin-left:60%;margin-top:3%;">
         </div>
       </nav>
-    <div class="container">
-        <div id="stuck">
-            <router-outlet></router-outlet>
+        <div class="container">
+            <div id="stuck">
+                <router-outlet></router-outlet>
+            </div>
         </div>
-        <div class="wrapper-view">
-            <div class="component" id="comp3">
-                <app-profile></app-profile>
-              </div>
-              <div id="comp2" style="padding-top:10%;">
-                <app-github-search></app-github-search>
-            </div>
-            <div class="component" style="background-color:coral;height:700px;padding:12%;">
-              <app-about></app-about>
-            </div>
-      </div>
-      <div class="component" style="color: honeydew; height:700px;background-color: crimson;">
-          <app-not-found></app-not-found>
-      </div>
-    </div>
 </div>
 

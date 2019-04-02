@@ -1,71 +1,76 @@
-<form class="row" id="search" (ngSubmit)='submitSearch()' #searchForm='ngForm' style="margin-top:5%;">
-    <div class="col-md-8" style="margin-top:1%;padding:0;">
-        <input type="text" class="form-control" placeholder="search user" style="font-size:20px;" id="username" [(ngModel)]="username" name="username">
-      </div>
-      <div class="col-md-2">
-          <button type="submit" class="btn btn-outline-success btn-rounded">Search</button>
-      </div>
-</form>
-<div class="row" id ="results" *ngFor='let user of users; let i=index'>
-    <div class="col-md-7" style="margin:0;padding:0;">
-      <div class="row" style="margin: 0;padding: 0;">
-        <div class="col-md-6" class="profilestyle" id="profiledetails">  
-            <h2 style="margin-top: 10%;">{{user.name}}</h2>
-            <p>@{{user.login}}</p>
-            <p>{{user.company}}</p>
-        </div>
-        <div class="col-md-6" class="profilestyle" style="margin: 0;padding: 0;">
-            <img src="{{user.avatarUrl}}" style="height:200px;width:100%;margin:0;">
-        </div>
-      </div>
-      <div class="row"  id="profilestats">
-          <div class="col-md-4" style="text-align: center;">
-              <i class="fas fa-users">Followers</i>
-              <p class="thenumbers">{{user.followers}}</p>
+<div id="comp2">
+    <h2>
+        Search for your favourite Github Profiles here:
+      </h2>
+    <form class="row" id="search" (ngSubmit)='submitSearch()' #searchForm='ngForm' style="margin-top:1%;">
+        <div class="col-md-8" style="margin-top:1%;padding:0;">
+            <input type="text" class="form-control" placeholder="search user" style="font-size:20px;" id="username" [(ngModel)]="username" name="username">
           </div>
-          <div class="col-md-4" style="text-align: center;">
-              <i class="fas fa-users">Following</i>
-              <p class="thenumbers">{{user.following}}</p>
+          <div class="col-md-2">
+              <button type="submit" class="btn btn-primary btn-rounded" style="width:100px;height:50px;">Search</button>
           </div>
-          <div class="col-md-4" style="text-align: center;">
-              <i class="fas fa-tasks">Repositories</i>
-              <p class="thenumbers">{{user.public_repos}}</p>    
+    </form>
+    <div class="row" id ="results" *ngFor='let user of users; let i=index'>
+        <div class="col-md-7" style="margin:0;padding:0;">
+          <div class="row" style="margin: 0;padding: 0;">
+            <div class="col-md-6" class="profilestyle" id="profiledetails">  
+                <h2 style="margin-top: 10%;">{{user.name}}</h2>
+                <p>@{{user.login}}</p>
+                <p>{{user.company}}</p>
+            </div>
+            <div class="col-md-6" class="profilestyle" style="margin: 0;padding: 0;">
+                <img src="{{user.avatarUrl}}" style="height:200px;width:100%;margin:0;">
+            </div>
           </div>
-    </div>
-    </div>
-    <div class="col-md-1" id="contacts">
-      <div class="contactinfo">
-        <a target="_blank" href={{user.html_url}} class="fab fa-github" style="font-size:30px;color: #2f3847;"></a>
-      </div>
-      <div class="contactinfo">
-        <a href={{user.email}} class="far fa-envelope" style="font-size:30px;color: #2f3847;"></a>
-      </div>
-      <div class="contactinfo">
-          <a href="/"class="fas fa-tasks" style="font-size:30px;color: #2f3847;"></a>
-      </div>
-      <div class="contactinfo">
-        <i class="far fa-bell" style="font-size:30px;color: #2f3847;"></i>
-      </div>
-    </div>
-    <div class="col-md-4" id="repoList">
-      <div style="margin-top:0;" id="repos">
-      <div class="list-group" >
-        <li class="list-group-item" style="background-color:#0b1c38;font-size:20px;color:white;">Repositories</li>
-        <div *ngFor='let repository of repositories; let i=index;'> 
-            <div class="card" style="width: 18rem;margin:1%;height:15rem;border:solid;" *ngIf='i%2===0' class="card-body" style="background-color: #80c926;">
-                <h5 class="card-header">{{repository.name}}</h5>
-                <p class="card-text" style="color:white;">{{repository.description}}</p>
-                <i class="fab fa-github-square" style="font-size:24px;"></i>
-                <a href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
+          <div class="row"  id="profilestats">
+              <div class="col-md-4" style="text-align: center;">
+                  <i class="fas fa-users">Followers</i>
+                  <p class="thenumbers">{{user.followers}}</p>
               </div>
-              <div class="card" style="width: 18rem;margin:1%;height:15rem;" *ngIf='i%2!==0' class="card-body" style="background-color: grey;">
-                  <h5 class="card-header">{{repository.name}}</h5>
-                  <p class="card-text" style="color:white;">{{repository.description}}</p>
-                  <i class="fab fa-github-square" style="font-size:24px;"></i>
-                  <a href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
-                </div>
+              <div class="col-md-4" style="text-align: center;">
+                  <i class="fas fa-users">Following</i>
+                  <p class="thenumbers">{{user.following}}</p>
+              </div>
+              <div class="col-md-4" style="text-align: center;">
+                  <i class="fas fa-tasks">Repositories</i>
+                  <p class="thenumbers">{{user.public_repos}}</p>    
+              </div>
+        </div>
+        </div>
+        <div class="col-md-1" id="contacts">
+          <div class="contactinfo">
+            <a target="_blank" href={{user.html_url}} class="fab fa-github" style="font-size:30px;color: #2f3847;"></a>
+          </div>
+          <div class="contactinfo">
+            <a target="_blank" href={{user.email}} class="far fa-envelope" style="font-size:30px;color: #2f3847;"></a>
+          </div>
+          <div class="contactinfo">
+              <a target="_blank" href="/"class="fas fa-tasks" style="font-size:30px;color: #2f3847;"></a>
+          </div>
+          <div class="contactinfo">
+            <i class="far fa-bell" style="font-size:30px;color: #2f3847;"></i>
+          </div>
+        </div>
+        <div class="col-md-4" id="repoList">
+          <div style="margin-top:0;" id="repos">
+          <div class="list-group" >
+            <li class="list-group-item" style="background-color:#0b1c38;font-size:20px;color:white;">Repositories</li>
+            <div *ngFor='let repository of repositories; let i=index;'> 
+                <div class="card" style="width: 18rem;margin:1%;height:15rem;border:solid;" *ngIf='i%2===0' class="card-body" style="background-color: #80c926;">
+                    <h5 class="card-header">{{repository.name}}</h5>
+                    <p class="card-text" style="color:white;">{{repository.description}}</p>
+                    <i class="fab fa-github-square" style="font-size:24px;"></i>
+                    <a target="_blank" href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
+                  </div>
+                  <div class="card" style="width: 18rem;margin:1%;height:15rem;" *ngIf='i%2!==0' class="card-body" style="background-color: grey;">
+                      <h5 class="card-header">{{repository.name}}</h5>
+                      <p class="card-text" style="color:white;">{{repository.description}}</p>
+                      <i class="fab fa-github-square" style="font-size:24px;"></i>
+                      <a target="_blank" href={{repository.repoUrl}} class="card-link">{{repository.name}}</a>
+                    </div>
+          </div>
+          </div>
+          </div>
       </div>
-      </div>
-      </div>
-  </div>
+</div>
   
