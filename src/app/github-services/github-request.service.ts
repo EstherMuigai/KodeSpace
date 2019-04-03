@@ -54,6 +54,13 @@ export class GithubRequestService {
         error=>{
                 this.user.name="User Not Found."
                 this.user.avatarUrl="assets/images/default.jpg"
+                this.user.login=null
+                this.user.email=null
+                this.user.html_url=null
+                this.user.public_repos=0
+                this.user.company=null
+                this.user.followers=0
+                this.user.following=0
                 reject(error)
             }
         )
