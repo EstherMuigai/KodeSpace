@@ -31,21 +31,21 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app w
 
 ## Deployment on Github
 On the angular CLI terminal:
-...step 1:  Create a new repository on Github profile.Follow steps documented on this site:
+*step 1:  Create a new repository on Github profile.Follow steps documented on this site:
 `https://help.github.com/en/articles/create-a-repo`
-...step 2:  We add the remote URL to this repository by running this command:
+*step 2:  We add the remote URL to this repository by running this command:
 `git remote add origin "TheURLToTheRepoCreated"`
 *NB: Using a custom name in place of origin will bring errors. For this deployment, strictly use origin.*
-...step 3:  Install the CLI tool that will help us deploy our application by running this command: 
+*step 3:  Install the CLI tool that will help us deploy our application by running this command: 
 `npm i -g angular-cli-ghpages`
-...step 4: Create a dist/ folder in our application’s root folder by running this command:
+*step 4: Create a dist/ folder in our application’s root folder by running this command:
 `ng build --prod --base-href="https://InsertGithubUsername.github.io/InsertNameOfRepoCreatedAbove/"`
-...step 5: Next, we go to our gitignore folder in the text editor and remove the dist/ line.
-...step 6: Add,commit and push all changes.
-...step 7: Now we can run the following command to deploy to ghpages:
+*step 5: Next, we go to our gitignore folder in the text editor and remove the dist/ line.
+*step 6: Add,commit and push all changes.
+*step 7: Now we can run the following command to deploy to ghpages:
 `sudo npx ngh --dir=dist/project-name`
 *NB: The project-name should be the name of your project in your local computer*
-...step 8: If you encounter errors run the following command:
+*step 8: If you encounter errors run the following command:
 `sudo npx ngh --no-silent --dir=dist/project-name`
 i. If the error has to do with the remote name:
    Add the remote as origin,
@@ -53,7 +53,7 @@ i. If the error has to do with the remote name:
 ii. If the error has to do with ghpages:
     Confirm that you used the correct project-name as is in your local computer
 iii. For any other errors,search for solution on Github Forums
-...step 9: If successful you can run your project from ghpages using the base link you provided in step 4.
+*step 9: If successful you can run your project from ghpages using the base link you provided in step 4.
 
 ## Find license here
 https://github.com/EstherMuigai/quotes-app/blob/master/LICENSE
