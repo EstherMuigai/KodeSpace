@@ -7,7 +7,7 @@
             <input type="text" class="form-control" placeholder="search user" style="font-size:20px;" id="username" [(ngModel)]="username" name="username">
           </div>
           <div class="col-md-2">
-              <button type="submit" class="btn btn-primary btn-rounded" style="width:100px;height:50px;">Search</button>
+              <button type="submit" class="btn btn-primary btn-rounded" style="width:100px;height:50px;z-index:10;">Search</button>
           </div>
     </form>
     <div class="row" id ="results" *ngFor='let user of users; let i=index'>
@@ -75,14 +75,14 @@
           </div>
       </div>
 </div>
-<h3 style="margin-top:1%;">Trending developers on git hub today:</h3>
+<h3 style="margin-top:1%;">Trending developers on github today:</h3>
 <div class="container-fluid" id="trends" style="height:250px;">
     <div class="row flex-row flex-nowrap">
         <div class="col-3" *ngFor='let trend of trends; let i=index' style="height:200px;">
             <div class="card card-block" style="background-color: red;max-height:200px;color: white;width:10rem;margin:1%;">
               <img class="card-img-top" src="{{trend.Tavatar}}">
               <div class="card-footer">
-                  <a target="_blank" href={{trend.Turll}} class="card-link" id="specialA">
+                  <a target="_blank" href="{{trend.Turl}}" class="card-link" id="specialA">
                       <i class="fab fa-github-square" style="font-size:20px;"></i><span appTruncateText>{{trend.Tname|uppercase}}</span>
                   </a>
               </div>
